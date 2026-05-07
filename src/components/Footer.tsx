@@ -6,10 +6,9 @@ interface FooterProps {
 
 export default function Footer({ setSection }: FooterProps) {
   const links = [
-    { label: 'GitHub', href: '#' },
-    { label: 'Email', href: '#' },
+    { label: 'GitHub', href: 'https://github.com/ayaoba24' },
+    { label: 'Email', href: 'mailto:orioyeesther2019@gmail.com' },
     { label: 'LinkedIn', href: '#' },
-    { label: 'Scholar', href: '#' },
   ];
 
   return (
@@ -31,6 +30,8 @@ export default function Footer({ setSection }: FooterProps) {
             <a
               key={link.label}
               href={link.href}
+              target={link.href.startsWith('http') ? '_blank' : undefined}
+              rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
               className="font-sans text-sm font-semibold uppercase text-on-surface-variant hover:text-primary transition-all hover:translate-y-[-2px]"
             >
               {link.label}

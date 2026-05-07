@@ -9,6 +9,7 @@ interface NavigationProps {
 export default function Navigation({ activeSection, setSection }: NavigationProps) {
   const navItems: { label: string; id: Section }[] = [
     { label: 'HOME', id: 'home' },
+    { label: 'ABOUT', id: 'about' },
     { label: 'PROJECTS', id: 'projects' },
     { label: 'CONTACT', id: 'contact' },
   ];

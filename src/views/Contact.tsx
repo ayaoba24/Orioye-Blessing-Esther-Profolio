@@ -19,29 +19,19 @@ export default function Contact() {
       variants={containerVariants}
       className="min-h-screen py-24 px-4 md:px-16 max-w-7xl mx-auto"
     >
-      {/* Asymmetric Header */}
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
-        <div className="md:col-span-7 flex flex-col justify-center space-y-6">
-          <div className="flex items-center gap-4">
-            <span className="h-px w-12 bg-primary"></span>
-            <span className="text-sm font-bold text-primary tracking-widest uppercase">Connectivity & Collaboration</span>
-          </div>
-          <h1 className="text-5xl md:text-6xl text-on-surface leading-tight font-display">
-            Let's <span className="text-primary italic font-sans font-medium">Connect</span>
-          </h1>
-          <p className="text-lg text-on-surface-variant max-w-xl font-sans leading-relaxed">
-            Whether you're looking to discuss a high-stakes data architecture project, explore research opportunities, or simply share a technical insight, I'm always open to meaningful dialogue.
-          </p>
+      {/* Header */}
+      <header className="mb-16 space-y-6">
+        <div className="flex items-center gap-4">
+          <span className="h-px w-12 bg-primary"></span>
+          <span className="text-sm font-bold text-primary tracking-widest uppercase">Connectivity & Collaboration</span>
         </div>
-        <div className="md:col-span-5 relative h-80 rounded-2xl overflow-hidden shadow-2xl group border border-outline-variant/30">
-          <img 
-            src="https://lh3.googleusercontent.com/aida/ADBb0ui2CSAemD4ysUymmgHbOOvq3b-kMUzrY0i0WjhG6ymFvZOFaATGKUTYb5830TogC2laUEv8xC2ZzULl4RRvjvsQ6Lj6hX7crNbmdyVssIIeUsRm6LsXKkLSs4EyfYoJe2I4DFNbPOozjTf0wXFSZDz6JrU1qAN-dSIPmSAkn5ReWRV5DOfAA_TdOyEYrjmphOOMrW0RZ2A1NKxY-8iP07O9SdFcf0das_SYYalgl30FvBo1jwa0sFQe3gZ90kiDSEJAF1b73ZzuY-U" 
-            className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
-            alt="Collaboration"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-surface/40 to-transparent"></div>
-        </div>
-      </div>
+        <h1 className="text-5xl md:text-7xl text-on-surface leading-tight font-display max-w-4xl">
+          Let's <span className="text-primary italic font-sans font-medium">Connect</span>
+        </h1>
+        <p className="text-lg md:text-xl text-on-surface-variant max-w-2xl font-sans leading-relaxed">
+          Whether you're looking to discuss a high-stakes data architecture project, explore research opportunities, or simply share a technical insight, I'm always open to meaningful dialogue.
+        </p>
+      </header>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
         {/* Sidebar */}
@@ -147,13 +137,15 @@ export default function Contact() {
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {[
-            { label: 'Open Source Repository', title: 'GitHub', icon: <Github size={24} />, color: 'primary' },
-            { label: 'Professional Network', title: 'LinkedIn', icon: <Linkedin size={24} />, color: 'primary' }
+            { label: 'Open Source Repository', title: 'GitHub', icon: <Github size={24} />, href: 'https://github.com/ayaoba24' },
+            { label: 'Professional Network', title: 'LinkedIn', icon: <Linkedin size={24} />, href: '#' }
           ].map((node, i) => (
             <motion.a 
               key={i}
               whileHover={{ y: -5 }}
-              href="#" 
+              href={node.href}
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center p-8 glass-card rounded-2xl group transition-all hover:bg-primary/5 hover:border-primary/30"
             >
               <div className="w-14 h-14 flex items-center justify-center bg-white rounded-xl border border-outline-variant group-hover:border-primary transition-colors shadow-sm">
@@ -173,12 +165,13 @@ export default function Contact() {
 
       {/* Map Teaser Section */}
       <section className="mt-24 grid grid-cols-1 md:grid-cols-2 items-center gap-12 mb-12">
-        <div className="order-2 md:order-1 rounded-3xl overflow-hidden h-96 grayscale hover:grayscale-0 shadow-2xl transition-all duration-1000 cursor-crosshair">
+        <div className="order-2 md:order-1 rounded-3xl overflow-hidden h-96 grayscale hover:grayscale-0 shadow-2xl transition-all duration-1000 cursor-crosshair relative">
           <img 
-            src="https://lh3.googleusercontent.com/aida/ADBb0uinOAZSBftgmI3IQ40FiH5I_fLnmVo7MkAdOAN5BKR-z1e1UnOUWpXDCfeG5Tf_zw040jTYSasfdGOCBvPGkeuJbQBCm5Tbvu7j_218UZ1yujleVK2LK1IwuO4UqKNAvb0bqVgMVkV71OdJR6QmQw1nyPIx8vj-9lGGXY267ehhWk7U06cXEhrA5RgUFRMlq4BRVWvGWLLLLRLVrLOmnQToAXjQof5vx6rscZim5dqXPyrXXFxhe5GybwM36-Nn1lp-odtoLn-5GdY" 
+            src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop" 
             className="w-full h-full object-cover" 
             alt="Global Network" 
           />
+          <div className="absolute inset-0 bg-primary/10 mix-blend-overlay"></div>
         </div>
         <motion.div variants={itemVariants} className="order-1 md:order-2 md:pl-12 space-y-6">
           <div className="flex items-center gap-3">

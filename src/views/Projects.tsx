@@ -18,14 +18,20 @@ export default function Projects() {
       description: 'A sophisticated recommendation engine leveraging historical meteorological data to optimize solar panel placement and capacity planning for urban infrastructure. Distills complex climate variables into actionable installation blueprints.',
       tags: ['Python', 'Scikit-Learn', 'Streamlit'],
       img: 'https://lh3.googleusercontent.com/aida/ADBb0ui2CSAemD4ysUymmgHbOOvq3b-kMUzrY0i0WjhG6ymFvZOFaATGKUTYb5830TogC2laUEv8xC2ZzULl4RRvjvsQ6Lj6hX7crNbmdyVssIIeUsRm6LsXKkLSs4EyfYoJe2I4DFNbPOozjTf0wXFSZDz6JrU1qAN-dSIPmSAkn5ReWRV5DOfAA_TdOyEYrjmphOOMrW0RZ2A1NKxY-8iP07O9SdFcf0das_SYYalgl30FvBo1jwa0sFQe3gZ90kiDSEJAF1b73ZzuY-U',
-      icons: [<Terminal size={20} />, <Download size={20} />]
+      links: [
+        { label: 'GITHUB', href: 'https://github.com/ayaoba24', icon: <Github size={20} /> },
+        { label: 'DRIVE', href: 'https://drive.google.com/drive/folders/10fuNg3iXcutYv7EecC3x5hgAXXEK9aBO?usp=drive_link', icon: <Download size={20} /> }
+      ]
     },
     {
       title: 'EasyVisa Exploratory Data Analysis',
       description: 'An executive-level analysis of visa certification trends. Utilizes multivariate statistical methods to identify critical success factors for international workforce integration.',
       tags: ['Pandas', 'Seaborn', 'Statistics'],
       img: 'https://lh3.googleusercontent.com/aida/ADBb0ugxng7eG9GY3zi3QUlM7YDFDuYNyvnZq3XtsJ30NF6s_f2SgRxFoMHq3Vp2bnW4mw6oA7LGPDnVaanl6jEl3KUaS-U3iXGZyM-1I450YfvpB0XurhbmurPgM4CRd64NokbElXMkftjUJNdwFqpzwUsdYc_rb93M5HZodhoumVZIrooGvIJc8j4oi8-BhSN3dnbfB5YRJe2ur42pJTJiH-ZXIrdtl6eZMN-yIbtpnyE3ZOB1IHMkaaJ9NSXouPjJegX0KvfEIdHgkw',
-      icons: [<Github size={20} />, <ExternalLink size={20} />],
+      links: [
+        { label: 'GITHUB', href: 'https://github.com/ayaoba24', icon: <Github size={20} /> },
+        { label: 'DRIVE', href: 'https://drive.google.com/drive/folders/10fuNg3iXcutYv7EecC3x5hgAXXEK9aBO?usp=drive_link', icon: <ExternalLink size={20} /> }
+      ],
       half: true
     },
     {
@@ -33,7 +39,10 @@ export default function Projects() {
       description: 'A forensic data study investigating survival correlations in the MS Estonia tragedy. Applied rigorous demographic filtering to reveal anomalies in emergency evacuation outcomes.',
       tags: ['Matplotlib', 'EDA', 'Modeling'],
       img: 'https://lh3.googleusercontent.com/aida/ADBb0ugFhl79hhDLHoW-MMR_ZrK7P73f3bIbX5hO0Ng0sdRhMzlLbgprsv6Lf0EDh87N9cvl3boqrimQXy-ZIQWb6GYOLqwp5g-8ZnBaFB2nOv2ZgSRZsoqzJwnkEJQWTrLAVBI_v21-uAtonG6gsrnyg-WCBmHaffWWuigRg2JNqV4Z5LYLLkqd2Qgymh8Pkk4UjvHe4ouK8h-GQeTGzBxLi5ILt5Ay9-ggWQqE32V2oJXQhA09nhQwguxutQh5TTfCR3oNshd4Jis9QTU',
-      icons: [<Terminal size={20} />, <FileJson size={20} />],
+      links: [
+        { label: 'GITHUB', href: 'https://github.com/ayaoba24', icon: <Github size={20} /> },
+        { label: 'DRIVE', href: 'https://drive.google.com/drive/folders/10fuNg3iXcutYv7EecC3x5hgAXXEK9aBO?usp=drive_link', icon: <FileJson size={20} /> }
+      ],
       half: true,
       badge: 'CRITICAL ANALYSIS'
     }
@@ -72,8 +81,17 @@ export default function Projects() {
               <div className="flex justify-between items-start">
                 <h2 className="text-3xl font-display font-bold group-hover:text-primary transition-colors">{projects[0].title}</h2>
                 <div className="flex gap-4 text-on-surface-variant">
-                  {projects[0].icons.map((icon, i) => (
-                    <button key={i} className="hover:text-primary transition-colors">{icon}</button>
+                  {projects[0].links.map((link, i) => (
+                    <a 
+                      key={i} 
+                      href={link.href} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="hover:text-primary transition-colors"
+                      title={link.label}
+                    >
+                      {link.icon}
+                    </a>
                   ))}
                 </div>
               </div>
@@ -115,10 +133,16 @@ export default function Projects() {
                       ))}
                     </div>
                     <div className="flex gap-6 border-t border-outline-variant/10 pt-4">
-                      {project.icons.map((icon, i) => (
-                        <button key={i} className="flex items-center gap-2 text-xs font-bold text-primary hover:underline transition-all">
-                          {icon} {i === 0 ? 'GITHUB' : 'DRIVE'}
-                        </button>
+                      {project.links.map((link, i) => (
+                        <a 
+                          key={i} 
+                          href={link.href} 
+                          target="_blank" 
+                          rel="noopener noreferrer" 
+                          className="flex items-center gap-2 text-xs font-bold text-primary hover:underline transition-all"
+                        >
+                          {link.icon} {link.label}
+                        </a>
                       ))}
                     </div>
                   </div>

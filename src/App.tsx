@@ -8,6 +8,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
 import Home from './views/Home';
+import About from './views/About';
 import Projects from './views/Projects';
 import Contact from './views/Contact';
 import { Section } from './types';
@@ -36,6 +37,7 @@ export default function App() {
             transition={{ duration: 0.3, ease: 'easeInOut' }}
           >
             {activeSection === 'home' && <Home setSection={setActiveSection} />}
+            {activeSection === 'about' && <About setSection={setActiveSection} />}
             {activeSection === 'projects' && <Projects />}
             {activeSection === 'contact' && <Contact />}
           </motion.div>
