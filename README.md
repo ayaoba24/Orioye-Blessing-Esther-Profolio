@@ -1,20 +1,50 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Orioye Blessing Esther Portfolio
 
-# Run and deploy your AI Studio app
+Professional portfolio of a Data Engineer, Project Manager, and AI Solutions Enthusiast featuring technical projects and architecture insights.
 
-This contains everything you need to run your app locally.
+## 🚀 Features
 
-View your app in AI Studio: https://ai.studio/apps/12fd8c27-ca2b-4228-a5ac-ef377d9496d8
+- **Home**: Introduction and high-level overview.
+- **About**: Detailed professional background and expertise.
+- **Projects**: Showcase of technical projects and architecture insights.
+- **Contact**: Direct ways to get in touch.
 
-## Run Locally
+## 🛠️ Tech Stack
 
-**Prerequisites:**  Node.js
+- **Frontend**: React 19, TypeScript, Vite
+- **Styling**: Tailwind CSS 4
+- **Animations**: Motion (Framer Motion)
+- **Icons**: Lucide React
 
+## 📦 Installation & Setup
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+### Prerequisites
+
+- Node.js (Latest LTS recommended)
+
+### Getting Started
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/ayaoba24/Orioye-Blessing-Esther-Profolio.git
+   cd Orioye-Blessing-Esther-Profolio
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Run the development server:**
+   ```bash
+   npm run dev
+   ```
+
+4. **Build for production:**
+   ```bash
+   npm run build
+   ```
+
+## 📄 License
+
+This project is licensed under the Apache-2.0 License.
